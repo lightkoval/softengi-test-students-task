@@ -144,9 +144,9 @@ router.get("testing/task", function (request, response) {
             } else {
                 var settings = result.rows[0].value;
                 client.query("INSERT INTO student_tests(student_id, date, addition, subtraction, multiplication, division, " +
-                    "number_of_questions, correct_answers, incorrect_answers) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING id",
+                    "number_of_questions) VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING id",
                     [request.body.id, new Date(), settings.addition, settings.subtraction, settings.multiplication, settings.division,
-                        settings.numberOfQuestions, 0, 0], function (err, result) {
+                        settings.numberOfQuestions], function (err, result) {
                         done();
                         if (err) {
                             response.send(500);
@@ -256,7 +256,7 @@ router.get("/reports/tested_students", function (request, response) {
 
             "FROM students " +
             "JOIN student_tests ON students.id = student_tests.student_id " +
-            "WHERE finished= true AND date > $1 AND date < $2 ORDER BY date DESC, name", ['2016-05-01', '2016-05-09'], function (err, result) {
+            "WHERE finished= true ORDER BY date DESC, name", ['2016-05-01', '2016-05-09'], function (err, result) {
             done();
             if (err) {
                 response.send(500);
