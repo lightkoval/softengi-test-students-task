@@ -1,0 +1,26 @@
+<table class="table table-bordered">
+    <tr>
+        <th>Name</th>
+        <th>Date</th>
+        <th>Type example</th>
+        <th>Count correct answer</th>
+        <th>Count incorrect answer</th>
+        <th>Test result</th>
+    </tr>
+    <tr ng-repeat="item in tested_students" >
+        <td>{{item.name}}</td>
+        <td>{{item.date | date: "dd.mm.yyyy" }}</td>
+        <td>
+            <ul>
+            <li ng-hide="!item.addition">addition</li>
+            <li ng-hide="!item.subtraction">subtraction</li>
+            <li ng-hide="!item.multiplication">multiplication</li>
+            <li ng-hide="!item.division">division</li>
+       </ul>
+
+        <td>{{item.correct_answers_count}}</td>
+        <td>{{item.incorrect_answers_count}}</td>
+        <td>{{(item.correct_answers_count / (item.correct_answers_count + item.incorrect_answers_count) * 100).toFixed(1)}}%</td>
+    </tr>
+</table>
+

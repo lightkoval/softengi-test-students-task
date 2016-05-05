@@ -1,0 +1,32 @@
+<form>
+
+    <input type="checkbox" id="addition" name="addition" ng-model="settings.addition"/>
+    <label for="addition">Addition</label>
+    <br>
+
+    <input type="checkbox" id="subtraction" name="subtraction" ng-model="settings.subtraction"/>
+    <label for="subtraction">Subtraction</label>
+    <br>
+
+    <input type="checkbox" id="multiplication" name="multiplication" ng-model="settings.multiplication"/>
+    <label for="multiplication">Multiplication</label>
+    <br>
+
+    <input type="checkbox" id="division" name="division" ng-model="settings.division"/>
+    <label for="division">Division</label>
+    <br>
+
+    <div class="setting_select">
+        <label for="number_of_questions">Number of questions:</label>
+        <select id="number_of_questions" ng-model="settings.numberOfQuestions" class="form-control">
+            <option>4</option>
+            <option>8</option>
+            <option>12</option>
+            <option>16</option>
+        </select>
+    </div>
+
+
+    <button ng-click="getSettings()" class="btn btn-default">Reset</button>
+    <button ng-click="updateSettings(settings)" class="btn btn-default">Save</button>
+</form>

@@ -1,0 +1,26 @@
+<div class="container">
+    <div class="row">
+        <div class='col-sm-6'>
+            <div class="form-group">
+                <div class='input-group date' id='datetimepicker1'>
+                    <input type='text' class="form-control" />
+                    <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-calendar"></span>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript">
+            $(function () {
+                $('#datetimepicker1').datetimepicker();
+            });
+        </script>
+    </div>
+</div>
+
+<div class="list-group">
+    <a href="#reports/tested_students" class="list-group-item">Show students that have been tested for the period</a>
+    <a href="#reports/not_tested_students" class="list-group-item">Show the students, never for a period not tested</a>
+    <a href="#reports/poor_students" class="list-group-item">Students are tested at least three times during the period,
+        the result of which did not exceed 50%</a>
+</div>

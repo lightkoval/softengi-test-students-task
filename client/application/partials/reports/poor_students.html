@@ -1,0 +1,12 @@
+<table class="table table-bordered">
+    <tr>
+        <th>Name students </th>
+        <th>Count finished tests</th>
+        <th>Test result</th>
+    </tr>
+    <tr ng-repeat="item in tested_students" >
+        <td>{{item.name}}</td>
+        <td>{{item.count_finished}}</td>
+        <td>{{item.test_result}}</td>
+    </tr>
+</table>

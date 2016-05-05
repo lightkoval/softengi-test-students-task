@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="tms">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.5/angular-route.js"></script>
+    <script src="js/application.js"></script>
+    <script src="js/routes.js"></script>
+    <script src="js/controllers.js"></script>
+    <script src="js/directives.js"></script>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+    <title></title>
+</head>
+<body>
+
+<nav class="navbar navbar-default">
+    <ul class="nav navbar-nav">
+        <li class="active"><a href="#settings">Settings <span class="sr-only">(current)</span></a></li>
+        <li><a href="#testing/authorize">Testing</a></li>
+        <li><a href="#reports">Reports</a></li>
+    </ul>
+</nav>
+<div ng-view class="content">
+
+</div>
+
+</body>
+</html>

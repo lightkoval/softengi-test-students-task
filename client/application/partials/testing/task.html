@@ -1,0 +1,13 @@
+<h2>Проверка знаний</h2>
+
+<form name="example" novalidate>
+    <div class="example">
+        <p>{{currentTask.question}}</p> <input type="text" name="answer" placeholder="answer" ng-model="answer" natural-number class="form-control" />
+        <span ng-show="example.answer.$error.naturalNumber">The value is not a valid integer!</span>
+        <br>
+        <input type="submit" ng-click="sendAnswer(answer, currentTask.id)" ng-disabled="example.answer.$dirty && example.answer.$invalid" value="Send" class="btn btn-default">
+    </div>
+
+    <div class="count-answer">Правильных ответов <span id="correct-answer">{{correctAnswer}}</span></div>
+    <div class="count-answer">Неправильных ответов <span id="incorrect-answer">{{incorrectAnswer}}</span></div>
+</form>
